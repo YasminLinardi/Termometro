@@ -5,6 +5,24 @@
 
     <Grid>
 
+    <GridRowDefinitions>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+    </GridRowDefinitions>
+
+    <GridColumnDefinitions>
+         <ColumnDefinition Height="*"/>
+         <ColumnDefinition Height="*"/>
+         <ColumnDefinition Height="*"/>
+    </GridColumnDefinitions>
+
+       <Image_id="imgFundo"
+          Grid.Columnspan="3"
+          Grid.Rowspan="4"
+          
+
     
            <Frame>
 
