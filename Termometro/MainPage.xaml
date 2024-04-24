@@ -20,7 +20,7 @@
 
        <Image_id="imgFundo"
           Grid.Columnspan="3"
-          Grid.Rowspan="4"
+          Grid.Rowspan="4"/>
           
 
     
