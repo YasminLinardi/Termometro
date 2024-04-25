@@ -5,36 +5,84 @@
 
     <Grid>
 
-    <GridRowDefinitions>
+      <Grid.RowDefinitions>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
-    </GridRowDefinitions>
+      </Grid.RowDefinitions>
 
-    <GridColumnDefinitions>
-         <ColumnDefinition Height="*"/>
-         <ColumnDefinition Height="*"/>
-         <ColumnDefinition Height="*"/>
-    </GridColumnDefinitions>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*"/>
+         <ColumnDefinition Width="*"/>
+         <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
 
-       <Image_id="imgFundo"
+       <Image x:Name="imgFundo"
           Grid.Columnspan="3"
           Grid.Rowspan="4"/>
           
 
     
-           <Frame>
+           <Frame
+             CornerRadius="20"
+             Margin="10"
+             VerticalOptions="15"
+             BorderColor="Black"
+             Grid.Row="1"
+             Grid.RowSpan="2"
+             Grid.Column="0"
+             Pedding="0">
+
+      <Grid>
+       <Grid.RowDefinitions>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+
+       <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*"/>
+       </Grid.ColumnDefinitions>
+
+       <Label 
+         Text="Apucarana-PR"
+         TextColor="Black"
+         HorizontalTextAlignment="Center"
+         Grid.Row="2"
+         Grid.Column="0"
+         Margin="7,0"
+         FontSize="37"
+         FontFamily="Bold"/>
+
+       <Label 
+         Text="Tempo"
+         TextColor="Black"
+         HorizontalTextAlignment="Center"
+         Grid.Row="2"
+         Grid.Column="0"
+         Margin="7,0"
+         FontSize="16"
+         FontFamily="Bold"/>
+
+       <Label 
+         Text="Sol"
+         TextColor="Black"
+         HorizontalTextAlignment="Center"
+         Grid.Row="3"
+         Grid.Column="0"
+         Margin="7,0"
+         FontSize="16"
+         FontFamily="Bold"/>
+
+
+           </Grid>
+           </Frame>
 
 
 
 
-           <Frame>
 
-
-
-
-
-    <Grid>
+    </Grid>
 
 </ContentPage>
