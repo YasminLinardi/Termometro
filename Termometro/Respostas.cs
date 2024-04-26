@@ -1,7 +1,29 @@
+using System.Security.Cryptography;
+
 namespace Termometro;
 
 public class Resposta
 
 {
-    public Results ressults {get;set;}
+    public Results results {get;set;}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

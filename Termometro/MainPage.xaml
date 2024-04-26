@@ -19,20 +19,19 @@
       </Grid.ColumnDefinitions>
 
        <Image x:Name="imgFundo"
-          Grid.Columnspan="3"
-          Grid.Rowspan="4"/>
+          Grid.ColumnSpan="3"
+          Grid.RowSpan="4"/>
           
 
     
            <Frame
              CornerRadius="20"
              Margin="10"
-             VerticalOptions="15"
              BorderColor="Black"
              Grid.Row="1"
              Grid.RowSpan="2"
              Grid.Column="0"
-             Pedding="0">
+             Padding="0">
 
       <Grid>
        <Grid.RowDefinitions>
@@ -60,7 +59,7 @@
          TextColor="Black"
          HorizontalTextAlignment="Center"
          Grid.Row="2"
-         Grid.Column="0"
+         Grid.Column="1"
          Margin="7,0"
          FontSize="16"
          FontFamily="Bold"/>
@@ -70,7 +69,17 @@
          TextColor="Black"
          HorizontalTextAlignment="Center"
          Grid.Row="3"
-         Grid.Column="0"
+         Grid.Column="2"
+         Margin="7,0"
+         FontSize="16"
+         FontFamily="Bold"/>
+
+         <Label 
+         Text="Lua"
+         TextColor="Black"
+         HorizontalTextAlignment="Center"
+         Grid.Row="3"
+         Grid.Column="2"
          Margin="7,0"
          FontSize="16"
          FontFamily="Bold"/>
