@@ -2,9 +2,11 @@
 
 namespace Termometro;
 
-public partial class MainPage : ContentPAge
+public partial class MainPage : ContentPage
 {
   const string Url = "https://api.hgbrasil.com/weather?woeid=455927&key=03414340";
+    private object labelTemp;
+    private object labelWind_direction;
 
     public MainPage()
     {
@@ -13,13 +15,15 @@ public partial class MainPage : ContentPAge
 
     }
 
-async void AtualizaTempo()
+    public Resposta Resposta { get; private set; }
+
+    async void AtualizaTempo()
 {
   try
   {
     var httpClient = new HttpClient();
     var response = await httpClient.GetAsync(Url);
-    if(response.IsSuucessStatusCode)
+    if(response.IsSuccessStatusCode)
     {
       var content = await response.Content.ReadAsStringAsync();
       Resposta = JsonSerializer.Deserialize<Resposta>(content);
@@ -38,48 +42,42 @@ void PreencherTela()
   labelTemp.Text = respostas.results.Temp.ToString();
   labelHumidity.Text = respostas.results.Humidity.ToString();
   labelDescription.Text = respostas.results.Description;
-  labelImg_id.Text = respostas.results.Img_id.ToString();
-  labelCurrently.Text = respostas.results.Currently;
-  labelCid.Text = respostas.results.Cid;
   labelCity.Text = respostas.results.City;
+  labelRain.Text = respostas.results.Rain.ToString();
   labelSunrise.Text = respostas.results.Sunrise;
   labelSunset.Text = respostas.results.Sunset;
   labelWind_speedy.Text = respostas.results.Wind_speedy;
   labelWind_direction.Text = respostas.results.Wind_direction.ToString();
-  labelWind_cardinal.Text = respostas.results.Wind_cardinal.ToString();
-  labelMoon_phase.Text = respostas.results.Moon_phase.ToString();
-  labelCondition_slug.Text = respostas.results.Condition_slug.ToString();
-  labelCity_name.Text = respostas.results.City_name;
-  labelTimezone.Text = respostas.results.Timezone;
-  labelForecast.Text = respostas.results.Forecast;
+
+  
   if (respostas.results.Moon_phase=="full")
-       labeldafaselua.Text = "cheia";
-else if(reposta.results.Moon_phase=="new")
-       labeldafasedalua.Text = "Nova";
-else if(reposta.results.Moon_phase=="growing")
-       labeldafasedalua.Text = "Crescente";
-else if(reposta.results.Moon_phase=="waning")
-       labeldafasedalua.Text = "minguante";
+       labelFullMoon.Text = "Cheia";
+else if(resposta.results.Moon_phase=="new")
+       labelNewMoon.Text = "Nova";
+else if(resposta.results.Moon_phase=="growing")
+       labelGrowingMoon.Text = "Crescente";
+else if(resposta.results.Moon_phase=="waning")
+       labelWaningMoon.Text = "Minguante";
 
 
-if(resposta.results.currently=="noite")
+if(resposta.results.currently=="Noite")
 {
   if(resposta.results.Rain>=10)
-     imgFundo.Source="noitechuvosa.png";
+     imgFundo.Source="Noitechuvosa.png";
   else if(resposta.results.cloudiness>=10)
-     imgFundo.Source="noitelimpa.png";
+     imgFundo.Source="Noitelimpa.png";
   else
-     imgFundo.Source="noitenublada.png";
+     imgFundo.Source="Noitenublada.png";
 }
 
 else
 {
   if(Resposta.results.Rain>=10)
-  imgFundo.Source="diachuvoso.png";
+  imgFundo.Source="Diachuvoso.png";
   else if(resposta.results.cloudiness>=10)
-  imgFundo.Source="dialimpo.png";
+  imgFundo.Source="Dialimpo.png";
   else
-  imgFundo.Source="diachuvoso,png";
+  imgFundo.Source="Diachuvoso,png";
 }
 
 }
@@ -106,6 +104,11 @@ else
 
 
 }
+
+
+
+
+
 
 
 

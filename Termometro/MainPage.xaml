@@ -23,72 +23,230 @@
           Grid.RowSpan="4"/>
           
 
-    
+               <!--Frame temp-->
            <Frame
-             CornerRadius="20"
-             Margin="10"
+             CornerRadius="30"
              BorderColor="Black"
+             BackgroundColor="#000000"
              Grid.Row="1"
              Grid.RowSpan="2"
              Grid.Column="0"
-             Padding="0">
+             HeightRequest="250"
+             Padding="6">
 
-      <Grid>
+    <Grid>
        <Grid.RowDefinitions>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
        </Grid.RowDefinitions>
 
-       <Grid.ColumnDefinitions>
-         <ColumnDefinition Width="*"/>
-       </Grid.ColumnDefinitions>
+       <Label x:Name="labelTemp"
+              HorizontalTextAlignment="Center"
+              FontSize="29"
+              TextColor="Black"
+              Grid.Row="0"/>
 
-       <Label 
-         Text="Apucarana-PR"
-         TextColor="Black"
-         HorizontalTextAlignment="Center"
-         Grid.Row="2"
-         Grid.Column="0"
-         Margin="7,0"
-         FontSize="37"
-         FontFamily="Bold"/>
+       <Label x:Name="labelCurrently"
+              HorizontalTextAlignment="Center"
+              FontSize="15"
+              TextColor="Black"
+              Grid.Row="1"/>
 
-       <Label 
-         Text="Tempo"
-         TextColor="Black"
-         HorizontalTextAlignment="Center"
-         Grid.Row="2"
-         Grid.Column="1"
-         Margin="7,0"
-         FontSize="16"
-         FontFamily="Bold"/>
-
-       <Label 
-         Text="Sol"
-         TextColor="Black"
-         HorizontalTextAlignment="Center"
-         Grid.Row="3"
-         Grid.Column="2"
-         Margin="7,0"
-         FontSize="16"
-         FontFamily="Bold"/>
-
-         <Label 
-         Text="Lua"
-         TextColor="Black"
-         HorizontalTextAlignment="Center"
-         Grid.Row="3"
-         Grid.Column="2"
-         Margin="7,0"
-         FontSize="16"
-         FontFamily="Bold"/>
-
-
-           </Grid>
+       <Label x:Name="labelCity"
+              HorizontalTextAlignment="Center"
+              FontSize="15"
+              TextColor="Black"
+              Grid.Row="2"/>
+       
+    </Grid>
            </Frame>
 
+               <!--Frame Rain-->
+           <Frame
+             CornerRadius="30"
+             VerticalOptions="End"
+             BorderColor="Black"
+             BackgroundColor="#000000"
+             Grid.Row="1"
+             Grid.Column="1"
+             HeightRequest="120"
+             Padding="6">
 
+    <Grid>
+       <Grid.RowDefinitions>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+
+       <Label x:Name="Rain"
+              HorizontalTextAlignment="Start"
+              VerticalOptions="Center"
+              FontSize="13"
+              TextColor="Black"
+              Grid.Row="0"
+              Grid.Column="0"/>
+
+       <Label x:Name="labelRain"
+              HorizontalTextAlignment="Center"
+              VerticalOptions="Center"
+              FontSize="13"
+              TextColor="Black"
+              Grid.Row="0"
+              Grid.Column="1"/>
+
+       <Label x:Name="Humidity"
+              HorizontalTextAlignment="Start"
+              VerticalOptions="Center"
+              FontSize="13"
+              TextColor="Black"
+              Grid.Row="1"
+              Grid.Column="1"/>
+
+       <Label x:Name="labelHumidity"
+              HorizontalTextAlignment="Center"
+              VerticalOptions="Center"
+              FontSize="13"
+              TextColor="Black"
+              Grid.Row="1"
+              Grid.Column="1"/>
+
+    </Grid>
+           </Frame>
+
+               <!--Frame Wind-->
+           <Frame
+             CornerRadius="30"
+             VerticalOptions="End"
+             BorderColor="Black"
+             BackgroundColor="#000000"
+             Grid.Row="1"
+             Grid.Column="2"
+             HeightRequest="120"
+             Padding="6">
+
+    <Grid>
+       <Grid.RowDefinitions>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+
+        <Label x:Name="labelWind"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               FontSize="18"
+               TextColor="Black"
+               Grid.Row="0"/>
+
+        <Label x:Name="labelWindDirection"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               FontSize="18"
+               TextColor="Black"
+               Grid.Row="1"/>
+
+        <Label x:Name="labelWindSpeedy"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               FontSize="18"
+               TextColor="Black"
+               Grid.Row="2"/>
+       
+    </Grid>
+           </Frame>
+
+               <!--Frame Sun-->
+           <Frame
+               CornerRadius="30"
+               BorderColor="Black"
+               BackgroundColor="#000000"
+               Grid.Row="2"
+               Grid.Column="0"
+               HeightRequest="150"
+               Padding="6">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="labelSun"
+               HorizontalTextAlignment="Center"
+               FontSize="18"
+               TextColor="Black"
+               Text="Sol: "
+               Grid.Row="0"/>
+
+        <Label x:Name="labelSunrise"
+               HorizontalTextAlignment="Center"
+               FontSize="18"
+               TextColor="Black"
+               Text="Nascer do Sol: "
+               Grid.Row="1"/>
+
+        <Label x:Name="labelSunset"
+               HorizontalTextAlignment="Center"
+               FontSize="18"
+               TextColor="Black"
+               Text="Pôr do Sol: "
+               Grid.Row="2"/>
+       
+    </Grid>
+            </Frame>
+
+               <!--Frame Moon_phase-->           
+            <Frame
+               CornerRadius="30"
+               BorderColor="Black"
+               BackgroundColor="#000000"
+               Grid.Row="2"
+               Grid.Column="1"
+               HeightRequest="200"
+               Padding="6">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="labelFullMoon"
+               HorizontalTextAlignment="Center"
+               FontSize="18"
+               TextColor="Black"
+               Text="Cheia"
+               Grid.Row="0"/>
+
+        <Label x:Name="labelWaningMoon"
+               HorizontalTextAlignment="Center"
+               FontSize="18"
+               TextColor="Black"
+               Text="Minguante"
+               Grid.Row="1"/>
+
+        <Label x:Name="labelGrowingMoon"
+               HorizontalTextAlignment="Center"
+               FontSize="18"
+               TextColor="Black"
+               Text="Crescente"
+               Grid.Row="2"/>
+
+        <Label x:Name="labelNewMoon"
+               HorizontalTextAlignment="Center"
+               FontSize="18"
+               TextColor="Black"
+               Text="Nova"
+               Grid.Row="3"/>
+       
+    </Grid>
+</Frame>
+     
 
 
 

@@ -38,5 +38,4 @@ public class Results
     public string Timezone {get;set;}
 
     public string Forecast {get;set;}
-
 }
