@@ -46,7 +46,7 @@ void PreencherTela()
   labelSunset.Text = Resposta.Results.Sunset;
   labelWind_speedy.Text = Resposta.Results.Wind_speedy;
   labelWind_direction.Text = Resposta.Results.Wind_direction.ToString();
-  labelCloudiness.Text = Resposta.Results.Cloudiness.ToString();
+  labelCloudiness.Text = Resposta.Results.Cloudiness.ToString( );
   labelCurrently.Text = Resposta.Results.Currently;
 
   
