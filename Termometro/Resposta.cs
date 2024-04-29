@@ -5,7 +5,7 @@ namespace Termometro;
 public class Resposta
 
 {
-    public Results results {get;set;}
+    public Results Results {get;set;}
 
 
 }

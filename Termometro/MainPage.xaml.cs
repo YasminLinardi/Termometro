@@ -5,8 +5,6 @@ namespace Termometro;
 public partial class MainPage : ContentPage
 {
   const string Url = "https://api.hgbrasil.com/weather?woeid=455927&key=03414340";
-    private object labelTemp;
-    private object labelWind_direction;
 
     public MainPage()
     {
@@ -15,7 +13,7 @@ public partial class MainPage : ContentPage
 
     }
 
-    public Resposta Resposta { get; private set; }
+    public Resposta Resposta;
 
     async void AtualizaTempo()
 {
@@ -39,32 +37,42 @@ public partial class MainPage : ContentPage
 void PreencherTela()
 {
   
-  labelTemp.Text = respostas.results.Temp.ToString();
-  labelHumidity.Text = respostas.results.Humidity.ToString();
-  labelDescription.Text = respostas.results.Description;
-  labelCity.Text = respostas.results.City;
-  labelRain.Text = respostas.results.Rain.ToString();
-  labelSunrise.Text = respostas.results.Sunrise;
-  labelSunset.Text = respostas.results.Sunset;
-  labelWind_speedy.Text = respostas.results.Wind_speedy;
-  labelWind_direction.Text = respostas.results.Wind_direction.ToString();
+  labelTemp.Text = Resposta.Results.Temp.ToString();
+  labelHumidity.Text = Resposta.Results.Humidity.ToString();
+  labelDescription.Text = Resposta.Results.Description;
+  labelCity.Text = Resposta.Results.City;
+  labelRain.Text = Resposta.Results.Rain.ToString();
+  labelSunrise.Text = Resposta.Results.Sunrise;
+  labelSunset.Text = Resposta.Results.Sunset;
+  labelWind_speedy.Text = Resposta.Results.Wind_speedy;
+  labelWind_direction.Text = Resposta.Results.Wind_direction.ToString();
+  labelCloudiness.Text = Resposta.Results.Cloudiness.ToString();
+  labelCurrently.Text = Resposta.Results.Currently;
 
   
-  if (respostas.results.Moon_phase=="full")
+  if (Resposta.Results.Moon_phase=="full")
        labelFullMoon.Text = "Cheia";
-else if(resposta.results.Moon_phase=="new")
+else if(Resposta.Results.Moon_phase=="new")
        labelNewMoon.Text = "Nova";
-else if(resposta.results.Moon_phase=="growing")
-       labelGrowingMoon.Text = "Crescente";
-else if(resposta.results.Moon_phase=="waning")
-       labelWaningMoon.Text = "Minguante";
+else if(Resposta.Results.Moon_phase=="first_quarter")
+       labelGrowingMoon.Text = "Quarto crescente";
+else if(Resposta.Results.Moon_phase=="waxing_crescent")
+       labelGrowingMoon.Text = "Lua crescente";
+else if(Resposta.Results.Moon_phase=="waxing_gibbous")
+       labelGrowingMoon.Text = "Gibosa crescente";
+else if(Resposta.Results.Moon_phase=="waning_crescent")
+       labelWaningMoon.Text = "Lua minguante";
+else if(Resposta.Results.Moon_phase=="Last_quarter")
+       labelWaningMoon.Text = "Quarto minguante";
+else if(Resposta.Results.Moon_phase=="waning_gibbous")
+       labelWaningMoon.Text = "Gibosa minguante";
 
 
-if(resposta.results.currently=="Noite")
+if(Resposta.Results.Currently=="Noite")
 {
-  if(resposta.results.Rain>=10)
+  if(Resposta.Results.Rain >= 10)
      imgFundo.Source="Noitechuvosa.png";
-  else if(resposta.results.cloudiness>=10)
+  else if(Resposta.Results.Cloudiness >= 10)
      imgFundo.Source="Noitelimpa.png";
   else
      imgFundo.Source="Noitenublada.png";
@@ -72,9 +80,9 @@ if(resposta.results.currently=="Noite")
 
 else
 {
-  if(Resposta.results.Rain>=10)
+  if(Resposta.Results.Rain>=10)
   imgFundo.Source="Diachuvoso.png";
-  else if(resposta.results.cloudiness>=10)
+  else if(Resposta.Results.Cloudiness>=10)
   imgFundo.Source="Dialimpo.png";
   else
   imgFundo.Source="Diachuvoso,png";

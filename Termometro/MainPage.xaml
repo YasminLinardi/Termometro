@@ -58,6 +58,13 @@
               FontSize="15"
               TextColor="Black"
               Grid.Row="2"/>
+
+       
+       <Label x:Name="labelDescription"
+              HorizontalTextAlignment="Center"
+              FontSize="15"
+              TextColor="Black"
+              Grid.Row="3"/>
        
     </Grid>
            </Frame>
@@ -109,8 +116,17 @@
               VerticalOptions="Center"
               FontSize="13"
               TextColor="Black"
-              Grid.Row="1"
+              Grid.Row="2"
               Grid.Column="1"/>
+
+       <Label x:Name="labelCloudiness"
+              HorizontalTextAlignment="Center"
+              VerticalOptions="Center"
+              FontSize="13"
+              TextColor="Black"
+              Grid.Row="3"
+              Grid.Column="1"/>       
+              
 
     </Grid>
            </Frame>
@@ -140,14 +156,14 @@
                TextColor="Black"
                Grid.Row="0"/>
 
-        <Label x:Name="labelWindDirection"
+        <Label x:Name="labelWind_direction"
                HorizontalTextAlignment="Center"
                VerticalOptions="Center"
                FontSize="18"
                TextColor="Black"
                Grid.Row="1"/>
 
-        <Label x:Name="labelWindSpeedy"
+        <Label x:Name="labelWind_speedy"
                HorizontalTextAlignment="Center"
                VerticalOptions="Center"
                FontSize="18"

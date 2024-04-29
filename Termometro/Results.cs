@@ -14,6 +14,7 @@ public class Results
     public string Img_id {get;set;}
 
     public string Currently {get;set;}
+    public double Cloudiness {get;set;}
 
     public string Cid {get;set;}
 
