@@ -10,6 +10,7 @@
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
 
       <Grid.ColumnDefinitions>
@@ -20,18 +21,18 @@
 
        <Image x:Name="imgFundo"
           Grid.ColumnSpan="3"
-          Grid.RowSpan="4"/>
+          Grid.RowSpan="5"
+          Aspect="AspectFill"/>
           
 
                <!--Frame temp-->
            <Frame
              CornerRadius="30"
              BorderColor="Black"
-             BackgroundColor="#000000"
+             BackgroundColor="#55FFFFFF"
              Grid.Row="1"
              Grid.RowSpan="2"
              Grid.Column="0"
-             HeightRequest="250"
              Padding="6">
 
     <Grid>
@@ -39,32 +40,52 @@
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
        </Grid.RowDefinitions>
 
+       <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*"/>
+         <ColumnDefinition Width="*"/>
+       </Grid.ColumnDefinitions>
+
        <Label x:Name="labelTemp"
-              HorizontalTextAlignment="Center"
+              HorizontalOptions="End"
+              VerticalOptions="Start"
+              FontSize="50"
+              TextColor="Black"
+              Grid.Row="0"
+              Grid.Column="0"/>
+
+       <Label Text="°C"
+              HorizontalOptions="Start"
+              VerticalOptions="Start"
               FontSize="29"
               TextColor="Black"
-              Grid.Row="0"/>
+              Grid.Row="0"
+              Grid.Column="1"/>
 
        <Label x:Name="labelCurrently"
               HorizontalTextAlignment="Center"
               FontSize="15"
               TextColor="Black"
-              Grid.Row="1"/>
+              Grid.Row="1"
+              Grid.ColumnSpan="2"/>
 
        <Label x:Name="labelCity"
               HorizontalTextAlignment="Center"
               FontSize="15"
               TextColor="Black"
-              Grid.Row="2"/>
+              Grid.Row="2"
+              Grid.ColumnSpan="2"/>
+              
 
        
        <Label x:Name="labelDescription"
               HorizontalTextAlignment="Center"
               FontSize="15"
               TextColor="Black"
-              Grid.Row="3"/>
+              Grid.Row="3"
+              Grid.ColumnSpan="2"/>
        
     </Grid>
            </Frame>
@@ -72,16 +93,15 @@
                <!--Frame Rain-->
            <Frame
              CornerRadius="30"
-             VerticalOptions="End"
              BorderColor="Black"
-             BackgroundColor="#000000"
+             BackgroundColor="#55FFFFFF"
              Grid.Row="1"
              Grid.Column="1"
-             HeightRequest="120"
              Padding="6">
 
     <Grid>
        <Grid.RowDefinitions>
+         <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
@@ -134,16 +154,15 @@
                <!--Frame Wind-->
            <Frame
              CornerRadius="30"
-             VerticalOptions="End"
              BorderColor="Black"
-             BackgroundColor="#000000"
+             BackgroundColor="#55FFFFFF"
              Grid.Row="1"
              Grid.Column="2"
-             HeightRequest="120"
              Padding="6">
 
     <Grid>
        <Grid.RowDefinitions>
+         <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="*"/>
@@ -177,14 +196,14 @@
            <Frame
                CornerRadius="30"
                BorderColor="Black"
-               BackgroundColor="#000000"
+               BackgroundColor="#55FFFFFF"
                Grid.Row="2"
-               Grid.Column="0"
-               HeightRequest="150"
+               Grid.Column="1"
                Padding="6">
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -218,10 +237,9 @@
             <Frame
                CornerRadius="30"
                BorderColor="Black"
-               BackgroundColor="#000000"
+               BackgroundColor="#55FFFFFF"
                Grid.Row="2"
-               Grid.Column="1"
-               HeightRequest="200"
+               Grid.Column="2"
                Padding="6">
 
     <Grid>
@@ -232,33 +250,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="labelFullMoon"
+        <Label x:Name="labelMoon"
                HorizontalTextAlignment="Center"
                FontSize="18"
                TextColor="Black"
                Text="Cheia"
-               Grid.Row="0"/>
-
-        <Label x:Name="labelWaningMoon"
-               HorizontalTextAlignment="Center"
-               FontSize="18"
-               TextColor="Black"
-               Text="Minguante"
                Grid.Row="1"/>
-
-        <Label x:Name="labelGrowingMoon"
-               HorizontalTextAlignment="Center"
-               FontSize="18"
-               TextColor="Black"
-               Text="Crescente"
-               Grid.Row="2"/>
-
-        <Label x:Name="labelNewMoon"
-               HorizontalTextAlignment="Center"
-               FontSize="18"
-               TextColor="Black"
-               Text="Nova"
-               Grid.Row="3"/>
        
     </Grid>
 </Frame>

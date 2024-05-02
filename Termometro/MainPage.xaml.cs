@@ -37,79 +37,59 @@ public partial class MainPage : ContentPage
 void PreencherTela()
 {
   
-  labelTemp.Text = Resposta.Results.Temp.ToString();
-  labelHumidity.Text = Resposta.Results.Humidity.ToString();
-  labelDescription.Text = Resposta.Results.Description;
-  labelCity.Text = Resposta.Results.City;
-  labelRain.Text = Resposta.Results.Rain.ToString();
-  labelSunrise.Text = Resposta.Results.Sunrise;
-  labelSunset.Text = Resposta.Results.Sunset;
-  labelWind_speedy.Text = Resposta.Results.Wind_speedy;
-  labelWind_direction.Text = Resposta.Results.Wind_direction.ToString();
-  labelCloudiness.Text = Resposta.Results.Cloudiness.ToString( );
-  labelCurrently.Text = Resposta.Results.Currently;
+  labelTemp.Text = Resposta.results.temp.ToString();
+  labelHumidity.Text = Resposta.results.humidity.ToString();
+  labelDescription.Text = Resposta.results.description;
+  labelCity.Text = Resposta.results.city;
+  labelRain.Text = Resposta.results.rain.ToString();
+  labelSunrise.Text = Resposta.results.sunrise;
+  labelSunset.Text = Resposta.results.sunset;
+  labelWind_speedy.Text = Resposta.results.wind_speedy;
+  labelWind_direction.Text = Resposta.results.wind_direction.ToString();
+  labelCloudiness.Text = Resposta.results.cloudiness.ToString( );
+  labelCurrently.Text = Resposta.results.currently;
+  labelMoon.Text = Resposta.results.moon_phase;
 
   
-  if (Resposta.Results.Moon_phase=="full")
-       labelFullMoon.Text = "Cheia";
-else if(Resposta.Results.Moon_phase=="new")
-       labelNewMoon.Text = "Nova";
-else if(Resposta.Results.Moon_phase=="first_quarter")
-       labelGrowingMoon.Text = "Quarto crescente";
-else if(Resposta.Results.Moon_phase=="waxing_crescent")
-       labelGrowingMoon.Text = "Lua crescente";
-else if(Resposta.Results.Moon_phase=="waxing_gibbous")
-       labelGrowingMoon.Text = "Gibosa crescente";
-else if(Resposta.Results.Moon_phase=="waning_crescent")
-       labelWaningMoon.Text = "Lua minguante";
-else if(Resposta.Results.Moon_phase=="Last_quarter")
-       labelWaningMoon.Text = "Quarto minguante";
-else if(Resposta.Results.Moon_phase=="waning_gibbous")
-       labelWaningMoon.Text = "Gibosa minguante";
+  if (Resposta.results.moon_phase=="full")
+       labelMoon.Text = "Cheia";
+else if(Resposta.results.moon_phase=="new")
+       labelMoon.Text = "Nova";
+else if(Resposta.results.moon_phase=="first_quarter")
+       labelMoon.Text = "Quarto crescente";
+else if(Resposta.results.moon_phase=="waxing_crescent")
+       labelMoon.Text = "Lua crescente";
+else if(Resposta.results.moon_phase=="waxing_gibbous")
+       labelMoon.Text = "Gibosa crescente";
+else if(Resposta.results.moon_phase=="waning_crescent")
+       labelMoon.Text = "Lua minguante";
+else if(Resposta.results.moon_phase=="last_quarter")
+       labelMoon.Text = "Quarto minguante";
+else if(Resposta.results.moon_phase=="waning_gibbous")
+       labelMoon.Text = "Gibosa minguante";
 
 
-if(Resposta.Results.Currently=="Noite")
+if(Resposta.results.currently=="noite")
 {
-  if(Resposta.Results.Rain >= 10)
-     imgFundo.Source="Noitechuvosa.png";
-  else if(Resposta.Results.Cloudiness >= 10)
-     imgFundo.Source="Noitelimpa.png";
+  if(Resposta.results.rain >= 10)
+     imgFundo.Source="noitechuvosa.png";
+  else if(Resposta.results.cloudiness >= 10)
+     imgFundo.Source="noitelimpa.png";
   else
-     imgFundo.Source="Noitenublada.png";
+     imgFundo.Source="noitenublada.png";
 }
 
 else
 {
-  if(Resposta.Results.Rain>=10)
-  imgFundo.Source="Diachuvoso.png";
-  else if(Resposta.Results.Cloudiness>=10)
-  imgFundo.Source="Dialimpo.png";
+  if(Resposta.results.rain>=10)
+  imgFundo.Source="diachuvoso.png";
+  else if(Resposta.results.cloudiness>=10)
+  imgFundo.Source="dialimpo.png";
   else
-  imgFundo.Source="Diachuvoso,png";
+  imgFundo.Source="diachuvoso.png";
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
